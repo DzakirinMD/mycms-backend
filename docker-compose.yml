@@ -1,7 +1,10 @@
 version: '3.1'
 services:
-  mycms-backend:
-    image: mycms-backend-1.0.1
+  app:
+    build:
+#      context is stating the initial path. which is the root
+      context: .
+      dockerfile: docker/backend/Dockerfile
     ports:
       - "50000:50000"
     # the SPRING_DATASOURCE_URL must connect to docker port

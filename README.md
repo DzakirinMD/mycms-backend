@@ -7,11 +7,12 @@ Simple Backend Cash Management System
 
 # Docker
 ```bash
-# docker build
-$ docker build -t mycms-backend-1.0.1 .
 
 # compose container
 $ docker compose up -d
+
+# compose and re-build container (only run when u change Dockerfile)
+$ docker compose up --build -d
 
 # to remove composed container
 $ docker compose down
