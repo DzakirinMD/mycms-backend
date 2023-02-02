@@ -1,9 +1,11 @@
 spring:
   datasource:
-    url: 'jdbc:postgresql://localhost:5434/my_cms'
-    username: zacktest
-    password: zacktest
+    url: 'jdbc:postgresql://localhost:5435/my_cms'
+    username: postgres
+    password: postgres
     driverClassName: org.postgresql.Driver
+  flyway:
+    enabled: true
   jpa:
     hibernate:
       # Hibernate ddl auto (create, create-drop, validate, update)
