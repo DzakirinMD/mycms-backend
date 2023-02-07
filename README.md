@@ -64,19 +64,7 @@ Click on the microservice link to go to Spring Initialzr
     2. For Linux/Mac: ```bin/kafka-console-consumer.sh --topic transaction-services --from-beginning --bootstrap-server localhost:9092```
     3. available topics:
         1. transaction-services
-7. Now that all the kafka service is up and running. The main() method of eact microservice can be started
-
-# Docker
-```bash
-# docker build
-$ docker build -t springbootbackend-1.0.1.jar .
-
-# compose container
-$ docker compose up -d
-
-# to remove composed container
-$ docker compose down
-```
+7. Now that all the kafka service is up and running. The main() method of each microservice can be started
 
 <h1>ERD:</h1>
 
@@ -126,12 +114,15 @@ Role: refers to a group of permissions of the authenticated user.
 
 # Docker
 ```bash
-
-# compose container
+# compose MYCMS-Backend container
 $ docker compose up -d
 
 # compose and re-build container (only run when u change Dockerfile)
 $ docker compose up --build -d
+
+# compose Kafka container
+$ cd /docker/kakfa
+$ docker compose up -d
 
 # to remove composed container
 $ docker compose down
