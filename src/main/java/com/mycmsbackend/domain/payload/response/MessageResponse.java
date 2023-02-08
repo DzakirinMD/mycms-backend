@@ -1,4 +1,4 @@
-package com.mycmsbackend.payload.response;
+package com.mycmsbackend.domain.payload.response;
 
 public class MessageResponse {
 	private String message;
