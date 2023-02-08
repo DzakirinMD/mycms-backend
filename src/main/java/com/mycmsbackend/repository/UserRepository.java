@@ -1,6 +1,6 @@
 package com.mycmsbackend.repository;
 
-import com.mycmsbackend.model.User;
+import com.mycmsbackend.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

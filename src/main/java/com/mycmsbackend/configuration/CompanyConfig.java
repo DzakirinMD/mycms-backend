@@ -1,9 +1,9 @@
 package com.mycmsbackend.configuration;
 
 
-import com.mycmsbackend.model.ERole;
-import com.mycmsbackend.model.Role;
-import com.mycmsbackend.model.User;
+import com.mycmsbackend.domain.ERole;
+import com.mycmsbackend.domain.Role;
+import com.mycmsbackend.domain.User;
 import com.mycmsbackend.repository.RoleRepository;
 import com.mycmsbackend.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;

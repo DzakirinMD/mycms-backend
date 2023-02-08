@@ -21,10 +21,20 @@ spring:
   sql:
     init:
       platform: postgres
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    topic:
+      name: inhouse-transfers
+
+# server properties
 server:
   error:
     include-message: always
   port: 50000
+
 # app properties
 my-cms:
   app:

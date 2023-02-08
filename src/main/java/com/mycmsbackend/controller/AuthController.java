@@ -1,16 +1,16 @@
 package com.mycmsbackend.controller;
 
 import com.mycmsbackend.exception.TokenRefreshException;
-import com.mycmsbackend.model.ERole;
-import com.mycmsbackend.model.RefreshToken;
-import com.mycmsbackend.model.Role;
-import com.mycmsbackend.model.User;
-import com.mycmsbackend.payload.request.LoginRequest;
-import com.mycmsbackend.payload.request.SignupRequest;
-import com.mycmsbackend.payload.request.TokenRefreshRequest;
-import com.mycmsbackend.payload.response.JwtResponse;
-import com.mycmsbackend.payload.response.MessageResponse;
-import com.mycmsbackend.payload.response.TokenRefreshResponse;
+import com.mycmsbackend.domain.ERole;
+import com.mycmsbackend.domain.RefreshToken;
+import com.mycmsbackend.domain.Role;
+import com.mycmsbackend.domain.User;
+import com.mycmsbackend.domain.payload.request.LoginRequest;
+import com.mycmsbackend.domain.payload.request.SignupRequest;
+import com.mycmsbackend.domain.payload.request.TokenRefreshRequest;
+import com.mycmsbackend.domain.payload.response.JwtResponse;
+import com.mycmsbackend.domain.payload.response.MessageResponse;
+import com.mycmsbackend.domain.payload.response.TokenRefreshResponse;
 import com.mycmsbackend.repository.RoleRepository;
 import com.mycmsbackend.repository.UserRepository;
 import com.mycmsbackend.security.jwt.JwtUtils;

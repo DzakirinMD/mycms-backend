@@ -1,7 +1,7 @@
 package com.mycmsbackend.security.services;
 
 
-import com.mycmsbackend.model.User;
+import com.mycmsbackend.domain.User;
 import com.mycmsbackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

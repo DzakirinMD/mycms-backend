@@ -1,6 +1,6 @@
 package com.mycmsbackend.controller;
 
-import com.mycmsbackend.model.Role;
+import com.mycmsbackend.domain.Role;
 import com.mycmsbackend.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

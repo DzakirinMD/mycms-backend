@@ -1,7 +1,7 @@
 package com.mycmsbackend.security.services;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.mycmsbackend.model.User;
+import com.mycmsbackend.domain.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

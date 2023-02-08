@@ -1,7 +1,7 @@
 package com.mycmsbackend.controller;
 
 import com.mycmsbackend.exception.ResourceNotFoundException;
-import com.mycmsbackend.model.User;
+import com.mycmsbackend.domain.User;
 import com.mycmsbackend.service.UsersService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +36,7 @@ public class UsersController {
     // find one user
     @GetMapping("/users/{id}")
     public User getSingleUser(@PathVariable long id) {
-        LOGGER.info(">>>>> Id to search is : " + id);
+        LOGGER.info(">>>>> Id to search is : {} " , id);
         return usersService
                 .getSingleUser(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No user with id : " + id));
