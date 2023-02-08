@@ -26,28 +26,30 @@ ReactJs -> Axios HTTP request -> Spring Boot -> PostgreSQL/microservices
 
 Click on the microservice link to go to Spring Initialzr
 
-| Microservice                                                                                                                                                                                                                                                                                                                                                                                        | Description                                         | Tomcat Port            |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|------------------------|
-| [springbootbackend](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.7.1&packaging=jar&jvmVersion=11&groupId=com&artifactId=springbootbackend&name=springboot-backend&description=Simple%20full%20stack%20web%20application%20for%20managing%20accounts%20in%20a%20company&packageName=com.springbootbackend&dependencies=web,data-jpa,devtools,postgresql)             | Base backend                                        | http://localhost:50000 |
-| [transaction-service](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.7.3&packaging=jar&jvmVersion=11&groupId=net.dzakirinmd&artifactId=transaction-service-producer&name=transaction-service-producer&description=An%20In-house%20transaction%20service%20producer%20for%20myCMS&packageName=net.dzakirinmd.transactionserviceproducer&dependencies=web,kafka,lombok) | Transaction Producer Service to produce transaction | http://localhost:50001 |
-| [inhouse-service](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.7.2&packaging=jar&jvmVersion=11&groupId=net.dzakirinmd&artifactId=stock-service&name=stock-service&description=Demo%20Microservice%20project%20for%20Spring%20Boot%20Stock%20Service&packageName=net.dzakirinmd.stockservice&dependencies=web,kafka)                                                 | Stock Consumer Service to consumer order            | http://localhost:50002 |
-| [email-service](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.7.2&packaging=jar&jvmVersion=11&groupId=net.dzakirinmd&artifactId=email-service&name=email-service&description=Demo%20Microservice%20project%20for%20Spring%20Boot%20Stock%20Service&packageName=net.dzakirinmd.emailservice&dependencies=web,kafka)                                                   | Email Consumer Service to consume order             | http://localhost:50003 |
+| Microservice                                                                                                                                                                                                                                                                                                                                                                                        | Description                                              | Tomcat Port            |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------|------------------------|
+| [springbootbackend](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.7.1&packaging=jar&jvmVersion=11&groupId=com&artifactId=springbootbackend&name=springboot-backend&description=Simple%20full%20stack%20web%20application%20for%20managing%20accounts%20in%20a%20company&packageName=com.springbootbackend&dependencies=web,data-jpa,devtools,postgresql)             | Base backend                                             | http://localhost:50000 |
+| [inhouse-service](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.7.2&packaging=jar&jvmVersion=11&groupId=net.dzakirinmd&artifactId=stock-service&name=stock-service&description=Demo%20Microservice%20project%20for%20Spring%20Boot%20Stock%20Service&packageName=net.dzakirinmd.stockservice&dependencies=web,kafka)                                                 | Inhouse Transfers Producer Service to create transaction | http://localhost:50000 |
+| [email-service](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.7.2&packaging=jar&jvmVersion=11&groupId=net.dzakirinmd&artifactId=email-service&name=email-service&description=Demo%20Microservice%20project%20for%20Spring%20Boot%20Stock%20Service&packageName=net.dzakirinmd.emailservice&dependencies=web,kafka)                                                   | Email Consumer Service to consume order                  | http://localhost:50001 |
 
 
 <h1>Project Dependency</h1>
 
 | Project Dependency | Version |
 |--------------------|---------|
-| `Spring Boot`      | 2.7.2   |
-| `Kafka`            | 3.2.1   |
-| `ReactJS`          | 16.13.1 |
-| `Axios`            | 0.27.2  |
-| `react-router-dom` | 5.3.3   |
-| `Bootstrap`        | 4.5.0   |
+| `Spring Boot`      | 2.7.8   |
+| `Kafka`            | 3.3.2   |
 
 
 
 <h1>Start Back-End Environment</h1>
+<p>In order to start the backend application. The Zookeeper and Kafka must be started first. See step below on how to start the project.</p>
+
+```bash
+# compose Kafka container
+$ cd /docker/kakfa
+$ docker compose up -d
+```
 
 1. open terminal to start Kafka Zookeeper:
 2. cd /path/to/kafka_2.12-3.2.1
@@ -57,14 +59,15 @@ Click on the microservice link to go to Spring Initialzr
     1. For Window Powershell: ```.\bin\windows\kafka-server-start.bat .\config\server.properties```
     2. For Linux/Mac: ```bin/kafka-server-start.sh config/server.properties```
 4. Kafka broker is running at localhost:9092
-5. To delete Kafka Topic:
-    1. for Linux/Mac: ```./bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic transaction-services```
-6. To read the message in topic:
+5. To list Kafka Topics:
+   1. For Window Powershell: ```.\bin\windows\kafka-topics.bat --bootstrap-server=localhost:9092 --list```
+   2. For Linux/Mac: ```bin/kafka-topics.sh --bootstrap-server=localhost:9092 --list```
+6. To delete Kafka Topic:
+    1. for Linux/Mac: ```./bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic inhouse-transfers```
+7. To read the message in topic:
     1. For Window Powershell: ```.\bin\windows\kafka-console-consumer.bat --topic order-topics --from-beginning --bootstrap-server localhost:9092```
-    2. For Linux/Mac: ```bin/kafka-console-consumer.sh --topic transaction-services --from-beginning --bootstrap-server localhost:9092```
-    3. available topics:
-        1. transaction-services
-7. Now that all the kafka service is up and running. The main() method of each microservice can be started
+    2. For Linux/Mac: ```bin/kafka-console-consumer.sh --topic inhouse-transfers --from-beginning --bootstrap-server localhost:9092```
+8. Now that all the kafka service is up and running. The main() method of each microservice can be started
 
 <h1>ERD:</h1>
 
@@ -77,12 +80,12 @@ open mycms-erd.xml in [draw.io](https://app.diagrams.net/)
 7. Database: <b>PostgreSQL</b>
 
 
-<p>
+
 Legend:
-BRN: Business Registration Number
-TRX_STATUS: 0 - fail, 1-success, 3-on hold
-CA/SA: Current Account/Saving Account
-</p>
+- BRN: Business Registration Number
+- TRX_STATUS: 0 - fail, 1-success, 3-on hold
+- CA/SA: Current Account/Saving Account
+
 
 
 

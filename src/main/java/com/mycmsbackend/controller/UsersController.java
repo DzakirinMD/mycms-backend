@@ -36,7 +36,7 @@ public class UsersController {
     // find one user
     @GetMapping("/users/{id}")
     public User getSingleUser(@PathVariable long id) {
-        LOGGER.info(">>>>> Id to search is : " + id);
+        LOGGER.info(">>>>> Id to search is : {} " , id);
         return usersService
                 .getSingleUser(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No user with id : " + id));
