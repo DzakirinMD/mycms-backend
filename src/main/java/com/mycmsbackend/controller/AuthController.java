@@ -1,10 +1,10 @@
 package com.mycmsbackend.controller;
 
 import com.mycmsbackend.exception.TokenRefreshException;
-import com.mycmsbackend.model.ERole;
-import com.mycmsbackend.model.RefreshToken;
-import com.mycmsbackend.model.Role;
-import com.mycmsbackend.model.User;
+import com.mycmsbackend.domain.ERole;
+import com.mycmsbackend.domain.RefreshToken;
+import com.mycmsbackend.domain.Role;
+import com.mycmsbackend.domain.User;
 import com.mycmsbackend.payload.request.LoginRequest;
 import com.mycmsbackend.payload.request.SignupRequest;
 import com.mycmsbackend.payload.request.TokenRefreshRequest;

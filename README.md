@@ -72,10 +72,6 @@ open mycms-erd.xml in [draw.io](https://app.diagrams.net/)
 
 <h1>Tech Stack:</h1>
 
-1. Front-End: ReactJS <b>v16.13.1</b>
-2. Axios: <b>v0.27.2</b>
-3. react-router-dom: <b>v5.3.3</b>
-4. Bootstrap: <b>v4.5.0</b>
 5. Back-End: <b>Spring Boot</b> [Spring intializr](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.7.1&packaging=jar&jvmVersion=11&groupId=com&artifactId=springbootbackend&name=springboot-backend&description=Simple%20full%20stack%20web%20application%20for%20managing%20accounts%20in%20a%20company&packageName=com.springbootbackend&dependencies=web,data-jpa,devtools,postgresql)
 6. Batch-Job: Spring Batch
 7. Database: <b>PostgreSQL</b>
@@ -89,16 +85,6 @@ CA/SA: Current Account/Saving Account
 </p>
 
 
-
-Please install these npm package for front-end:
-```bash
-npm install axios
-npm install react-router-dom
-npm install redux redux-thunk
-npm install react-bootstrap bootstrap
-npm install react-validation validator
-npm install --save-dev redux-devtools-extension
-```
 
 default username: user
 default password: zacktest

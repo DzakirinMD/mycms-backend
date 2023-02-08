@@ -1,4 +1,4 @@
-package com.mycmsbackend.model;
+package com.mycmsbackend.domain;
 
 import javax.persistence.*;
 import java.time.Instant;

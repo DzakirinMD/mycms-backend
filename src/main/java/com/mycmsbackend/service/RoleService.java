@@ -1,6 +1,6 @@
 package com.mycmsbackend.service;
 
-import com.mycmsbackend.model.Role;
+import com.mycmsbackend.domain.Role;
 import com.mycmsbackend.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

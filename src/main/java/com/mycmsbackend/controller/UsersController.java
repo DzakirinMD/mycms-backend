@@ -1,7 +1,7 @@
 package com.mycmsbackend.controller;
 
 import com.mycmsbackend.exception.ResourceNotFoundException;
-import com.mycmsbackend.model.User;
+import com.mycmsbackend.domain.User;
 import com.mycmsbackend.service.UsersService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

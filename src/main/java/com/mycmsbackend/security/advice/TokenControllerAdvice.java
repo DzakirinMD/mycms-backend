@@ -1,4 +1,4 @@
-package com.mycmsbackend.advice;
+package com.mycmsbackend.security.advice;
 
 import com.mycmsbackend.exception.TokenRefreshException;
 import org.springframework.http.HttpStatus;

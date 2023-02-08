@@ -1,7 +1,7 @@
 package com.mycmsbackend.security.services;
 
 import com.mycmsbackend.exception.TokenRefreshException;
-import com.mycmsbackend.model.RefreshToken;
+import com.mycmsbackend.domain.RefreshToken;
 import com.mycmsbackend.repository.RefreshTokenRepository;
 import com.mycmsbackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

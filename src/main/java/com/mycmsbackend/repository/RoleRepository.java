@@ -1,7 +1,7 @@
 package com.mycmsbackend.repository;
 
-import com.mycmsbackend.model.ERole;
-import com.mycmsbackend.model.Role;
+import com.mycmsbackend.domain.ERole;
+import com.mycmsbackend.domain.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
