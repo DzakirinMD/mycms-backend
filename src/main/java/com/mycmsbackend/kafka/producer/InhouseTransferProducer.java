@@ -26,7 +26,7 @@ public class InhouseTransferProducer {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void sendInhouseMessage(InhouseTransferEventDTO inhouseTransferEventDTO) {
+    public void sendInhouseKafkaMessage(InhouseTransferEventDTO inhouseTransferEventDTO) {
 
         LOGGER.info("Inhouse-Transaction event sent => {}" , inhouseTransferEventDTO);
 

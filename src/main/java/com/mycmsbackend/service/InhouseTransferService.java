@@ -27,6 +27,6 @@ public class InhouseTransferService {
         inhouseTransferEventDTO.setMessage("Inhouse transaction has been created. Your transaction id is : " + inhouseTransferDTO.getOrderId());
         inhouseTransferEventDTO.setInhouseTransfer(inhouseTransferDTO);
 
-        inhouseTransferProducer.sendInhouseMessage(inhouseTransferEventDTO);
+        inhouseTransferProducer.sendInhouseKafkaMessage(inhouseTransferEventDTO);
     }
 }
