@@ -1,4 +1,4 @@
-package com.mycmsbackend.domain;
+package com.mycmsbackend.service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,12 +14,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class InhouseTransfer {
+public class InhouseTransferDTO {
 
     private String orderId;
     private String orderName;
     private String orderEmailRecipient;
     private int orderQty;
     private double orderPrice;
-
 }
