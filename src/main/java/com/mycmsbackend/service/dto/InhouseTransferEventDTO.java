@@ -1,6 +1,5 @@
 package com.mycmsbackend.service.dto;
 
-import com.mycmsbackend.domain.InhouseTransfer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +15,5 @@ public class InhouseTransferEventDTO {
 
     private String message;
     private String status;
-    private InhouseTransfer inhouseTransfer;
-
+    private InhouseTransferDTO inhouseTransfer;
 }
