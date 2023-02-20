@@ -16,9 +16,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class InhouseTransferDTO {
 
-    private String orderId;
-    private String orderName;
-    private String orderEmailRecipient;
-    private int orderQty;
-    private double orderPrice;
+    private String inhouseTransferTrxId;
+    private String inhouseTransferTrxName;
+    private String inhouseTransferTrxEmailRecipient;
+    private int inhouseTransferTrxQty;
+    private double inhouseTransferTrxAmount;
 }
