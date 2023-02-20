@@ -20,12 +20,12 @@ public class InhouseTransferService {
 
     public void createInhouseTransfer(InhouseTransferDTO inhouseTransferDTO) {
 
-        inhouseTransferDTO.setOrderId(UUID.randomUUID().toString());
+        inhouseTransferDTO.setInhouseTransferTrxId(UUID.randomUUID().toString());
 
         InhouseTransferEventDTO inhouseTransferEventDTO = new InhouseTransferEventDTO();
         inhouseTransferEventDTO.setStatus("CREATED");
-        inhouseTransferEventDTO.setMessage("Inhouse transaction has been created. Your transaction id is : " + inhouseTransferDTO.getOrderId());
-        inhouseTransferEventDTO.setInhouseTransfer(inhouseTransferDTO);
+        inhouseTransferEventDTO.setMessage("Inhouse transaction has been created. Your transaction id is : " + inhouseTransferDTO.getInhouseTransferTrxId());
+        inhouseTransferEventDTO.setInhouseTransferDTO(inhouseTransferDTO);
 
         inhouseTransferProducer.sendInhouseKafkaMessage(inhouseTransferEventDTO);
     }
