@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class InhouseTransferDTO {
 
+    private Long id;
     private String inhouseTransferTrxId;
     private String inhouseTransferTrxName;
     private String inhouseTransferTrxEmailRecipient;
