@@ -39,8 +39,10 @@ server:
 my-cms:
   app:
     jwtSecret: mycmsSecretKey
-    jwtExpirationMs: '300000'
-    jwtRefreshExpirationMs: '600000'
+    jwtExpirationMs: '3000000'
+    jwtRefreshExpirationMs: '6000000'
     # For testing
 #    jwtExpirationMs: '60000'
 #    jwtRefreshExpirationMs: '120000'
+  microservices:
+    inhousetransfer: "http://localhost:50002/api/v1/inhouse-transfer/"
