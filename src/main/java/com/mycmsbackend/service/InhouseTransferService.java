@@ -14,12 +14,12 @@ import java.util.UUID;
 @Service
 public class InhouseTransferService {
 
-    private final InhouseTransferProducer inhouseTransferProducer;
-
     // microservice to microservice
     private final RestTemplate restTemplate;
     @Value("${my-cms.microservices.inhousetransfer}")
     private String inhouseTransferUrl;
+
+    private final InhouseTransferProducer inhouseTransferProducer;
 
     @Autowired
     public InhouseTransferService(InhouseTransferProducer inhouseTransferProducer, RestTemplate restTemplate) {
@@ -33,7 +33,7 @@ public class InhouseTransferService {
 
         InhouseTransferEventDTO inhouseTransferEventDTO = new InhouseTransferEventDTO();
         inhouseTransferEventDTO.setStatus("CREATED");
-        inhouseTransferEventDTO.setMessage("Inhouse transaction has been created. Your transaction id is : " + inhouseTransferDTO.getInhouseTransferTrxId());
+        inhouseTransferEventDTO.setMessage("Inhouse Transfer is being processed Your transaction id is : " + inhouseTransferDTO.getInhouseTransferTrxId());
         inhouseTransferEventDTO.setInhouseTransferDTO(inhouseTransferDTO);
 
         inhouseTransferProducer.sendInhouseKafkaMessage(inhouseTransferEventDTO);

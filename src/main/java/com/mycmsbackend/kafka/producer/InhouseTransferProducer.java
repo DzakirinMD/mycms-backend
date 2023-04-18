@@ -16,13 +16,13 @@ public class InhouseTransferProducer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(InhouseTransferProducer.class);
 
-    private NewTopic newTopic;
+    private final NewTopic inhouseTransferTopic;
 
-    private KafkaTemplate<String, InhouseTransferEventDTO> kafkaTemplate;
+    private final KafkaTemplate<String, InhouseTransferEventDTO> kafkaTemplate;
 
     @Autowired
-    public InhouseTransferProducer(NewTopic newTopic, KafkaTemplate<String, InhouseTransferEventDTO> kafkaTemplate) {
-        this.newTopic = newTopic;
+    public InhouseTransferProducer(NewTopic inhouseTransferTopic, KafkaTemplate<String, InhouseTransferEventDTO> kafkaTemplate) {
+        this.inhouseTransferTopic = inhouseTransferTopic;
         this.kafkaTemplate = kafkaTemplate;
     }
 
@@ -33,7 +33,7 @@ public class InhouseTransferProducer {
         // create message
         Message<InhouseTransferEventDTO> message = MessageBuilder
                 .withPayload(inhouseTransferEventDTO)
-                .setHeader(KafkaHeaders.TOPIC, newTopic.name())
+                .setHeader(KafkaHeaders.TOPIC, inhouseTransferTopic.name())
                 .build();
 
         kafkaTemplate.send(message);
