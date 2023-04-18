@@ -47,7 +47,7 @@ Click on the microservice link to go to Spring Initialzr
 
 ```bash
 # compose Kafka container
-$ cd /docker/kakfa
+$ cd docker/kakfa
 $ docker compose up -d
 ```
 

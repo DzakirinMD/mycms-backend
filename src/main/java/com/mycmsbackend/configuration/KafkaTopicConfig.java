@@ -12,10 +12,20 @@ public class KafkaTopicConfig {
     @Value("${spring.kafka.topic.name}")
     private String topicName;
 
+    @Value("${spring.kafka.topic.domestic}")
+    private String domesticTransferTopic;
+
     @Bean
     public NewTopic inhouseTransferTopic() {
         return TopicBuilder
                 .name(topicName)
+                .build();
+    }
+
+    @Bean
+    public NewTopic domesticTransferTopic() {
+        return TopicBuilder
+                .name(domesticTransferTopic)
                 .build();
     }
 }
