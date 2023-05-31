@@ -38,7 +38,7 @@ Click on the microservice link to go to Spring Initialzr
 | Project Dependency | Version |
 |--------------------|---------|
 | `Spring Boot`      | 2.7.8   |
-| `Kafka`            | 3.3.2   |
+| `Kafka`            | 3.2     |
 
 
 
