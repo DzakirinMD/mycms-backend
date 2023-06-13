@@ -32,13 +32,16 @@ Click on the microservice link to go to Spring Initialzr
 | [email-service](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.7.2&packaging=jar&jvmVersion=11&groupId=net.dzakirinmd&artifactId=email-service&name=email-service&description=Demo%20Microservice%20project%20for%20Spring%20Boot%20Stock%20Service&packageName=net.dzakirinmd.emailservice&dependencies=web,kafka)                                       | Email Consumer Service to consume order    | http://localhost:50001 |
 | [inhouse-service](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.7.2&packaging=jar&jvmVersion=11&groupId=net.dzakirinmd&artifactId=stock-service&name=stock-service&description=Demo%20Microservice%20project%20for%20Spring%20Boot%20Stock%20Service&packageName=net.dzakirinmd.stockservice&dependencies=web,kafka)                                     | Inhouse Transfers Consumer to store in db  | http://localhost:50002 |
 | [domestic-service](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.7.10&packaging=jar&jvmVersion=11&groupId=com&artifactId=mycms-ms3-domestic-service&name=mycms-ms3-domestic-service&description=Domestic%20Transfer%20service%20for%20mycms%20project&packageName=com.mycms-ms3-domestic-service&dependencies=web,lombok,kafka,data-jpa,postgresql)      | Domestic Transfers Consumer to store in db | http://localhost:50003 |
+| [batch-job](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.7.12&packaging=jar&jvmVersion=11&groupId=com&artifactId=mycms-ms4-batch-job&name=mycms-ms4-batch-job&description=Demo%20project%20for%20Spring%20Boot&packageName=com.mycms-ms4-batch-job&dependencies=web,h2,batch)                                                                           | Batch Job to store data into db            | http://localhost:50004 |
 
 <h1>Project Dependency</h1>
 
-| Project Dependency | Version |
-|--------------------|---------|
-| `Spring Boot`      | 2.7.8   |
-| `Kafka`            | 3.2     |
+| Project Dependency  | Version |
+|---------------------|---------|
+| `Spring Boot`       | 2.7.8   |
+| `Kafka`             | 3.2     |
+| `spring-batch-core` | 4.3.8   |
+| `Keycloak`          | 21.1.1  |
 
 
 
